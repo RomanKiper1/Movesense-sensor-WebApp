@@ -1,0 +1,129 @@
+/* Set shared colors and typography defaults */
+:root {
+  color-scheme: light dark;
+  font-family: "Segoe UI", system-ui, -apple-system, BlinkMacSystemFont,
+    sans-serif;
+  line-height: 1.5;
+  background-color: #f4f6fb;
+  color: #101828;
+}
+
+/* Give the page breathing room and a soft background */
+body {
+  margin: 0;
+  min-height: 100vh;
+  padding: 2rem;
+  background: radial-gradient(circle at top, #ffffff, #f4f6fb 40%);
+}
+
+/* Center the top title block */
+header {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+/* Lighter subtitle text under the main title */
+.subtitle {
+  margin: 0.25rem 0 0;
+  color: #475467;
+}
+
+/* Card style container for the app content */
+main {
+  max-width: 960px;
+  margin: 0 auto;
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 20px 40px rgba(15, 23, 42, 0.08);
+}
+
+/* Lay out the control buttons in a neat row */
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+/* Base look-and-feel for all buttons */
+button {
+  padding: 0.75rem 1.5rem;
+  border: 1px solid #d0d5dd;
+  border-radius: 999px;
+  background: #ffffff;
+  color: #101828;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: transform 120ms ease, box-shadow 120ms ease;
+}
+
+/* Tiny hover lift to show the buttons are interactive */
+button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 14px rgba(105, 112, 125, 0.18);
+}
+
+/* Bold status line so users can track connection state */
+.status {
+  text-align: center;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  color: #0f172a;
+}
+
+/* Surface quick facts about the loaded dataset */
+.dataset-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+  justify-content: space-between;
+  padding: 1rem 1.25rem;
+  border: 1px solid #e4e7ec;
+  border-radius: 12px;
+  background: #f8fafc;
+  margin-bottom: 1.5rem;
+}
+
+.dataset-meta p {
+  margin: 0.2rem 0;
+  color: #475467;
+}
+
+.dataset-meta strong {
+  color: #0f172a;
+}
+
+/* Dark frame around the chart area */
+.plot-wrapper {
+  border: 1px solid #e4e7ec;
+  border-radius: 12px;
+  background: #0f172a;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Canvas fills its container on both desktop and mobile */
+#plot {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px;
+}
+
+/* Keep the log heading tight to its content */
+.log h2 {
+  margin: 0 0 0.5rem;
+}
+
+/* Terminal-style log window for debugging text */
+#log-output {
+  background: #0f172a;
+  color: #e4e7ec;
+  border-radius: 8px;
+  padding: 1rem;
+  min-height: 120px;
+  overflow: auto;
+  font-size: 0.9rem;
+}

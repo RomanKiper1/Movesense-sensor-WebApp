@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Movesense Web BLE</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- Header shows project title and a short helper sentence -->
+    <header>
+      <h1>Movesense Web Bluetooth</h1>
+      <p class="subtitle">
+        Stream accelerometer data via the SensorData protocol
+      </p>
+    </header>
+
+    <main>
+      <input
+        id="csv-input"
+        type="file"
+        hidden
+        accept=".csv,text/csv"
+        aria-label="Choose accelerometer CSV"
+      />
+      <!-- Buttons now drive CSV visualization workflow -->
+      <section class="controls">
+        <button id="connect-btn" type="button">Load CSV</button>
+        <button id="start-btn" type="button" disabled>Refresh plot</button>
+        <button id="stop-btn" type="button" disabled>Clear view</button>
+        <button id="download-btn" type="button" disabled>Download copy</button>
+      </section>
+
+      <!-- Status line mirrors parsing/plotting steps -->
+      <section class="status">
+        <p id="status-text">Status: Waiting for CSV</p>
+      </section>
+
+      <section class="dataset-meta">
+        <div>
+          <p><strong>File:</strong> <span id="meta-file">—</span></p>
+          <p><strong>Samples:</strong> <span id="meta-samples">0</span></p>
+        </div>
+        <div>
+          <p><strong>Time span:</strong> <span id="meta-duration">—</span></p>
+          <p><strong>Value range:</strong> <span id="meta-range">—</span></p>
+        </div>
+      </section>
+
+      <!-- Canvas acts as placeholder for the live chart -->
+      <section class="plot-wrapper">
+        <canvas
+          id="plot"
+          width="640"
+          height="320"
+          aria-label="Live accelerometer plot"
+        ></canvas>
+      </section>
+
+      <!-- Log keeps a running history for debugging -->
+      <section class="log">
+        <h2>Log</h2>
+        <pre id="log-output">Waiting for CSV...</pre>
+      </section>
+    </main>
+
+    <script src="main.js" type="module"></script>
+  </body>
+</html>

@@ -1,0 +1,4 @@
+python-datalogger-tool/.venv/
+python-datalogger-tool/.py311/
+**/__pycache__/
+
